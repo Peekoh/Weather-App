@@ -48,7 +48,7 @@
 <footer>
     <a href="http://www.dana-hedrick.com">Portfolio</a>
     <a href="https://openweathermap.org/">API</a>
-    <a href="github.com">View Code</a>
+    <a href="https://github.com/Peekoh/Weather-App">View Code</a>
    
 </footer>
 </body>
