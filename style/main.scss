@@ -1,0 +1,238 @@
+@import url('https://fonts.googleapis.com/css?family=Noto+Sans+HK|Dancing+Script&display=swap');
+$font-main:'Noto Sans HK',
+sans-serif;
+$font-head:'Dancing Script',
+cursive;
+$main-color:#C7B19C;
+$accent:#446455;
+$font-color:#D3DDDC;
+
+%reset {
+    margin: 0;
+    padding: 0;
+}
+
+%max {
+    height: 100%;
+    width: 100%;
+}
+
+@mixin flex ($display, $justify, $align, $dir, $wrap) {
+    display: $display;
+    justify-content: $justify;
+    align-items: $align;
+    flex-direction: $dir;
+    flex-wrap: $wrap;
+}
+
+body,
+html {
+    padding: 0;
+    margin: 0;
+    background-color: $main-color;
+    color: $font-color;
+    font-family: $font-main;
+    font-size: 1.2em;
+    text-shadow: 2px 2px #446455;
+}
+
+h1 {
+    text-align: center;
+    margin: 0 .5em;
+    font-family: $font-head;
+    font-size: 2.2em;
+
+    @media only screen and (max-width: 1000px) {
+        display: none;
+    }
+}
+
+h2 {
+
+    font-size: 1.9em;
+    font-family: $font-head;
+    text-align: center;
+    margin: auto;
+    font-weight: bolder;
+}
+
+h3 {
+    text-align: center;
+}
+
+
+nav {
+    @include flex(flex, flex-start, center, row, none);
+    width: 100%;
+    height: 5em;
+    background-color: $accent;
+
+    @media only screen and (max-width: 1000px) {
+        height: 11%;
+    }
+
+    #icon {
+        height: 80%;
+        margin: .5em;
+    }
+
+    #nav-form {
+        @media only screen and (max-width: 1000px) {
+            height: 10%;
+            position: absolute;
+            top: 0;
+        }
+
+        position: absolute;
+        height: 1.6em;
+        right: 0;
+        padding-right: 1em;
+
+        #zipcode,
+        #zipcode:focus {
+            border: 2px solid $accent;
+            font-family: $font-main;
+            border-radius: 10px;
+            padding: .5em;
+            height: 100%;
+            width: 70%;
+            background-color: $font-color;
+            color: $accent;
+
+            @media only screen and (max-width: 1000px) {
+                font-size: 2em;
+            }
+        }
+
+
+        #submit {
+            background-color: $font-color;
+            font-family: $font-main;
+            color: $accent;
+            border: 2px solid $accent;
+            border-radius: 10px;
+            margin: auto -2px auto auto;
+            height: 100%;
+            width: 20%;
+
+            @media only screen and (max-width: 1000px) {
+                font-size: 2em;
+            }
+        }
+    }
+}
+
+main {
+    background-color: $accent;
+    width: 50%;
+    height: 54%;
+    margin: 5% auto 0;
+    border-radius: 10px;
+    @include flex(flex, center, center, column, none);
+
+    @media only screen and (max-width: 1000px) {
+        width: 90%;
+        height: 70%;
+        font-size: 2.2em;
+    }
+
+    #summary {
+        font-family: $font-head;
+        @include flex(flex, center, center, row, none);
+        margin: 0 auto;
+
+        p {
+            font-size: 1.9em;
+        }
+
+        img {
+            width: 2.2em;
+        }
+    }
+
+    #api-container {
+        @include flex(flex, center, flex-start, row, none);
+        margin: 0 auto 5%;
+        width: 100%;
+
+        #temperatures {
+            justify-content: flex-start;
+            margin: 0 1em;
+        }
+
+        #extra {
+            justify-content: flex-end;
+            margin: 0 1em;
+        }
+    }
+
+
+}
+
+#error {
+    width: 100%;
+    text-align: center;
+    margin: 3em auto;
+
+    @media only screen and (max-width: 1000px) {
+        font-size: 2.2em;
+        margin: 0;
+        padding: 0;
+    }
+
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 3em;
+    background-color: $accent;
+    @include flex(flex, center, center, row, none);
+
+    @media only screen and (max-width: 1000px) {
+        font-size: 2.2em;
+    }
+
+    a {
+        margin: .5em;
+        font-size: .8em;
+        text-decoration: none;
+        color: $font-color;
+    }
+}
+
+/*@media only screen and (max-width: 1000px) {
+    nav{
+        font-size:2.2em; 
+        h1{
+            display:none;
+        }
+        #nav-form{
+        width:60%;
+        height:5%;
+       display:block;
+            margin:auto;
+            #zipcode{
+                width:70%;
+                font-size:.8em;
+                height:100%;
+                padding:1.2em;
+                margin:auto;
+            }
+            #submit{
+                font-size:.8em;
+                width:20%;
+                height:100%;
+                float:right;
+                margin: auto -2px auto auto; 
+                padding:1.2em;
+            
+
+            }
+            
+        }
+    }
+    
+   
+} */
